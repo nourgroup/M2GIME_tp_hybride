@@ -1,3 +1,18 @@
-<p >page contact {{firstname}} and {{quantity}}</p>
-<input type="number" [(ngModel)]="quantity">
-<button (click)="onSub()">click here</button>
+<div>
+    <p >page contact {{contact.nom}} and {{contact.count}}</p>
+    <input type="number" [(ngModel)]="contact.count" />
+    <button (click)="onSub()">click here</button>
+
+    <div *ngFor="let mycontact of contacts">
+        <img src="./assets/images/{{mycontact.image}}" width=75 height="75">
+        <input type="text" value="{{mycontact.nom}}" /> <br/>
+        <img *ngIf="mycontact.nom == '' " src="./assets/images/warning.png" alt="s" width="20" height="20"/>
+        <input type="text" value="{{mycontact.phone}}" /> 
+        <img *ngIf="mycontact.phone == '' " src="./assets/images/warning.png" alt="s" width="20" height="20"/>
+    </div>
+        
+    <input type="text" [(ngModel)]="contact.nom" />     
+    <input type="text" [(ngModel)]="contact.phone" />
+    <button type="submit" (click)="addContact()" > Ajouter </button>
+
+</div>

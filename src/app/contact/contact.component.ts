@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Contact } from '../contact';
+import { PhoneBookService } from '../phone-book/phone-book.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,18 +9,29 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  //@Input name! : String 
-  firstname : String 
-  quantity : number = 100
-  
-  constructor() { 
-    this.firstname = "nour"
+  @Input() name! : String 
+  contacts! : Contact[]
+  contact! : Contact
+
+  constructor(private mPhoneBookService : PhoneBookService) { 
+    this.contacts = mPhoneBookService.getContacts()
+    this.contact = mPhoneBookService.getContact("nour")
+
   }
 
   ngOnInit(): void {
   }
 
   onSub(){
-    this.quantity--
+    this.contact.count--
+  }
+  addContact(){
+    var contact =  {
+      nom     : this.contact.nom,
+      phone   : this.contact.phone,
+      image   : this.contact.image,
+      count   : this.contact.count
+    }
+    this.mPhoneBookService.addContact(contact)
   }
 }
