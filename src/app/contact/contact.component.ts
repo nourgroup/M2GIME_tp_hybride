@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,OnChanges, Output, EventEmitter } from '@angular/core';
 import { Contact } from '../contact';
 import { PhoneBookService } from '../phone-book/phone-book.service';
 
@@ -13,25 +13,27 @@ export class ContactComponent implements OnInit {
   contacts! : Contact[]
   contact! : Contact
 
+  @Output () contactEvent = new EventEmitter <String>() ;
+
   constructor(private mPhoneBookService : PhoneBookService) { 
-    this.contacts = mPhoneBookService.getContacts()
-    this.contact = mPhoneBookService.getContact("nour")
 
   }
 
+  ngOnChanges() : void{
+    this.contact = this.mPhoneBookService.getContact(this.name)
+  }
+
   ngOnInit(): void {
+    
   }
 
   onSub(){
     this.contact.count--
   }
-  addContact(){
-    var contact =  {
-      nom     : this.contact.nom,
-      phone   : this.contact.phone,
-      image   : this.contact.image,
-      count   : this.contact.count
-    }
-    this.mPhoneBookService.addContact(contact)
+
+  modifier(){
+    console.log("clicked")
+    this.contactEvent.emit(this.contact.nom);
   }
+
 }

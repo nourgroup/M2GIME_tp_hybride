@@ -1,0 +1,9 @@
+<div class="bloc">
+    <img src="./assets/images/default-icon.jpg" width=75 height="75">
+    <div class="center">
+        <input type="text" [(ngModel)]="contact.nom" name="nom"/>   <br/>
+        <input type="text" [(ngModel)]="contact.phone" name="phone"/> <br/>
+        <input type="text" [(ngModel)]="contact.count" name="count"/> <br/>
+        <button type="submit" (click)="addContact()" > nouveau contact </button>
+    </div>
+</div>
