@@ -30,8 +30,7 @@ export class PhoneBookService {
   
   constructor() { }
 
-    getContact(nom : String) : Contact{
-
+    getContact(nom : String|undefined) : Contact{
       return this.contacts.find(contact => contact.nom == nom ) as Contact
     }
 

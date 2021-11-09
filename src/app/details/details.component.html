@@ -4,7 +4,18 @@
     <input type="number" [(ngModel)]="contact.count" />
     <button (click)="onSub()">click here</button>-->
     <h2>Details : </h2>
-    <div class="bloc">
-        {{name}}
+    <div class="bloc" *ngIf="contact != null">
+        <div class="bloc">
+            <img src="./assets/images/{{contact.image}}" width=75 height="75">
+            <div class="center">
+                <input type="text" [(ngModel)]="contact.nom" />
+                <img *ngIf="contact.nom == '' " src="./assets/images/warning.png" alt="s" width="20" height="20"/>
+                <br />
+                <input type="text" [(ngModel)]="contact.phone"/> 
+                <img *ngIf="contact.phone == '' " src="./assets/images/warning.png" alt="s" width="20" height="20"/>
+                <br />
+                <button>Modifier</button>
+            </div>
+        </div>
     </div>
 </div>
