@@ -41,4 +41,18 @@ export class PhoneBookService {
     addContact(contact : Contact){
       this.contacts.push(contact)
     }
+
+    setContact(mContact : Contact){
+        // modifier l'element
+        //console.log("clicked"+contact.nom)
+        //var contactFound = this.contacts.find(contact => contact.nom == mContact.nom ) as Contact
+        this.contacts.forEach(element => {
+          if(element.nom == mContact.nom){
+            element.count = mContact.count
+            element.image = mContact.image
+            element.phone = mContact.phone
+          }
+        });
+        
+    }
 }

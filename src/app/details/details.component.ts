@@ -26,4 +26,9 @@ export class DetailsComponent implements OnInit {
   ngOnChanges() : void{
     this.contact = this.mPhoneBookService.getContact(this.name)
   }
+
+  modifier(){
+    console.log("clicked")
+    this.mPhoneBookService.setContact(this.contact)
+  }
 }

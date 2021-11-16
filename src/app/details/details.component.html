@@ -14,7 +14,7 @@
                 <input type="text" [(ngModel)]="contact.phone"/> 
                 <img *ngIf="contact.phone == '' " src="./assets/images/warning.png" alt="s" width="20" height="20"/>
                 <br />
-                <button>Modifier</button>
+                <button  (click)="modifier()">Modifier</button>
             </div>
         </div>
     </div>
