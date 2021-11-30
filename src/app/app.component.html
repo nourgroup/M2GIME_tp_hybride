@@ -1,7 +1,11 @@
+<!--
 <app-contact 
             *ngFor="let contact of contacts" 
-            [name]="contact.nom"
-            (contactEvent)="onModify($event)">
+            [name]="contact.nom">
+            (contactEvent)="onModify($event)"
 </app-contact>
 <app-nouveau-contact></app-nouveau-contact>
 <app-details [name]="ContactsName"></app-details>
+-->
+<!-- regarder "app-routing.module.ts" pour voir l'association endpoint avec le component-->
+<router-outlet></router-outlet>

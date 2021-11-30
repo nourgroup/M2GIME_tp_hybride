@@ -3,8 +3,8 @@
     
     <input type="number" [(ngModel)]="contact.count" />
     <button (click)="onSub()">click here</button>-->
-    <h2>Details : </h2>
     <div class="bloc" *ngIf="contact != null">
+        <h2>Details : </h2>
         <div class="bloc">
             <img src="./assets/images/{{contact.image}}" width=75 height="75">
             <div class="center">

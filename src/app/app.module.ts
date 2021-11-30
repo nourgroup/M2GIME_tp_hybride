@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SearchContactComponent } from './search-contact/search-contact.component';
 import { NouveauContactComponent } from './nouveau-contact/nouveau-contact.component';
 import { DetailsComponent } from './details/details.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DetailsComponent } from './details/details.component';
     ContactComponent,
     SearchContactComponent,
     NouveauContactComponent,
-    DetailsComponent
+    DetailsComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,

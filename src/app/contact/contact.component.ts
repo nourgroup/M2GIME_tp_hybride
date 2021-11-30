@@ -1,4 +1,5 @@
 import { Component, Input, OnInit,OnChanges, Output, EventEmitter } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { Contact } from '../contact';
 import { PhoneBookService } from '../phone-book/phone-book.service';
 
@@ -12,10 +13,11 @@ export class ContactComponent implements OnInit {
   @Input() name! : String 
   contacts! : Contact[]
   contact! : Contact
+  
+  /* listener 2 bloc ng */
+  //@Output () contactEvent = new EventEmitter <String>() ;
 
-  @Output () contactEvent = new EventEmitter <String>() ;
-
-  constructor(private mPhoneBookService : PhoneBookService) { 
+  constructor(private mPhoneBookService : PhoneBookService,private router : Router ) { 
 
   }
 
@@ -33,7 +35,19 @@ export class ContactComponent implements OnInit {
 
   modifier(){
     console.log("clicked")
-    this.contactEvent.emit(this.contact.nom);
+  }
+
+  showDetails () {
+    /*
+      Noter que le lien est incorporé dans le button dans HTML
+    */
+    // passage simple sans param
+    // this.router.navigate(['/details']);
+    // passage avec param fix
+    // this.router.navigate(['/details;name=11']);
+    // passage simple avec param dynamique en fonction  
+    this.router.navigate(['/details',  { name : this.contact.nom } ]);
+    // console.log("showDetails")
   }
 
 }

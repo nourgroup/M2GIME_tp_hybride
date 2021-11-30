@@ -5,8 +5,7 @@ import { Contact } from '../contact';
   providedIn: 'root'
 })
 export class PhoneBookService {
-
-    //@Input name! : String 
+  
     private contacts : Contact[] = [
       {
         nom : "nour",
@@ -15,8 +14,8 @@ export class PhoneBookService {
         count : 100
       },
       {
-        nom : "",
-        phone : '',
+        nom : "nour-ed",
+        phone : '0013232992',
         image : "gotlib-coccinelle.jpg",
         count : 100
       },
@@ -48,9 +47,9 @@ export class PhoneBookService {
         //var contactFound = this.contacts.find(contact => contact.nom == mContact.nom ) as Contact
         this.contacts.forEach(element => {
           if(element.nom == mContact.nom){
-            element.count = mContact.count
-            element.image = mContact.image
-            element.phone = mContact.phone
+              element.count = mContact.count
+              element.image = mContact.image
+              element.phone = mContact.phone
           }
         });
         

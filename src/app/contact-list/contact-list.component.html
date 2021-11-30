@@ -1,0 +1,7 @@
+<app-contact 
+            *ngFor="let contact of contacts" 
+            [name]="contact.nom">
+            <!--(contactEvent)="onModify($event)"-->
+</app-contact>
+<app-nouveau-contact></app-nouveau-contact>
+<!--<app-details [name]="ContactsName"></app-details>-->

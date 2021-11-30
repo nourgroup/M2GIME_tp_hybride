@@ -10,6 +10,7 @@ import { PhoneBookService } from './phone-book/phone-book.service';
 export class AppComponent {
   title = 'MGimeTp4';
 
+  /*
   contacts! : Contact[] 
 
   ContactsName? : String
@@ -22,5 +23,6 @@ export class AppComponent {
     //console.log("clicked:"+mContact)
     this.ContactsName = mContact
   }
+  */
 
 }
